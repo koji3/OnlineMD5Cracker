@@ -1,4 +1,4 @@
-# OnlineMD5Crack
+# Online MD5 Crack Tool
 Coded By Black Viking
 #Usage
 [+] Coded By Black Viking

@@ -21,7 +21,7 @@ site = "http://md5.my-addr.com/md5_decrypt-md5_cracker_online/md5_decoder_tool.p
 
 def usage():
 	usage = """[+] Coded By Black Viking
-[+] Online MD5 Crack Tool
+[+] Online MD5 Cracker Tool
 [+] Version: V.1
 
 Usage:

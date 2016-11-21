@@ -62,7 +62,7 @@ def main():
 			md5(sys.argv[2])
 		else:
 			usage()
-	else
+	else:
 		usage()
 
 if __name__ == "__main__":

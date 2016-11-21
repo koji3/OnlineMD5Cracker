@@ -1,10 +1,6 @@
 # Online MD5 Crack Tool
 Coded By Black Viking
 #Usage
-[+] Coded By Black Viking
-[+] Online MD5 Crack Tool
-[+] Version: V.1
-
 Usage:
 	python md5.py -h/--hash <hash>
 

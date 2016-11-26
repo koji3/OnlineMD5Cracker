@@ -1,7 +1,6 @@
 ### [+] Coded By Black Viking
 ### [+] Online MD5 Cracker Tool
 ### [+] Version: V.2
-------------------------------
 	Usage:
 		-f/--file   Import MD5 hashs from a file
 		-h/--hash   For a single hash

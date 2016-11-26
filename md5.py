@@ -1,6 +1,6 @@
 #!/usr/bin/env python
 #-*- coding: utf-8 -*-
-#Online MD5 Crack Tool
+#Online MD5 Cracker Tool
 #
 #
 
@@ -76,7 +76,7 @@ def from_file(hash):
 		source = br.submit().read()
 		if 'Hash "'+hash+'" not found in database' in source:
 			print"[-] Hash '%s' not found in database"%(hash)
-			pass
+			site2()
 		elif 'String "'+hash+'" is not MD5 hash' in source:
 			print"[!] String '%s' is not MD5 hash"%(hash)
 			pass
@@ -98,7 +98,6 @@ def from_file(hash):
 			pass
 
 	site()
-	site2()
 
 
 
@@ -106,8 +105,8 @@ def from_file(hash):
 def main():
 	if len(sys.argv) == 3:
 		print"""[+] Coded By Black Viking
-[+] Online MD5 Crack Tool
-[+] Version: V.1"""
+[+] Online MD5 Cracker Tool
+[+] Version: V.2"""
 		print "-"*30
 
 		if sys.argv[1] == "-h" or sys.argv[1] == "--hash":

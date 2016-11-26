@@ -43,7 +43,7 @@ def from_opt(hash):
 		source = br.submit().read()
 		if 'Hash "'+hash+'" not found in database' in source:
 			print"[-] Hash '%s' not found in database"%(hash)
-			pass
+			site2()
 		elif 'String "'+hash+'" is not MD5 hash' in source:
 			print"[!] String '%s' is not MD5 hash"%(hash)
 			sys.exit()
@@ -65,7 +65,6 @@ def from_opt(hash):
 			sys.exit()
 
 	site()
-	site2()
 
 def from_file(hash):
 	def site():

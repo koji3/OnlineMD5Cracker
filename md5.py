@@ -5,7 +5,7 @@
 #
 
 __author__ = "Black Viking"
-__date__ = "11.26.2016"
+__date__ = "11.21.2016"
 __version__ = "v.2"
 
 import mechanize
@@ -24,8 +24,8 @@ def usage():
 [+] Version: V.2
 
 	Usage:
-	    -f/--file   Import MD5 hashs from a file
-	    -h/--hashs	For a single hash
+		-f/--file	Import MD5 hashs from a file
+		-h/--hash   For a single hash
 
 	Example
 		$ ./md5.py -h d8578edf8458ce06fbc5bb76a58c5ca4
@@ -104,11 +104,12 @@ def from_file(hash):
 
 
 def main():
-	print"""[+] Coded By Black Viking
+	if len(sys.argv) == 3:
+		print"""[+] Coded By Black Viking
 [+] Online MD5 Crack Tool
 [+] Version: V.1"""
-	print "-"*30
-	if len(sys.argv) == 3:
+		print "-"*30
+
 		if sys.argv[1] == "-h" or sys.argv[1] == "--hash":
 			try:
 				from_opt(sys.argv[2])

@@ -17,6 +17,7 @@ import time
 br = mechanize.Browser()
 br.set_handle_robots(False)
 
+	
 
 def usage():
 	usage = """[+] Coded By Black Viking
@@ -26,10 +27,12 @@ def usage():
 	Usage:
 		-f/--file   Import MD5 hashs from a file
 		-h/--hash   For a single hash
+		-q/--quiet	Read a single from standard input
 
 	Example
 		$ ./md5.py -h d8578edf8458ce06fbc5bb76a58c5ca4
-		$ ./md5.py -f hashs.txt"""
+		$ ./md5.py -f hashs.txt
+		$ echo "d8578edf8458ce06fbc5bb76a58c5ca4" | ./md5.py -q"""
 
 	print usage
 	sys.exit()
@@ -68,7 +71,7 @@ def decrypt_online(hash):
 
 
 def main():
-	if len(sys.argv) == 3:
+	if len(sys.argv) <= 3:
 		print"""[+] Coded By Black Viking
 [+] Online MD5 Cracker Tool
 [+] Version: V.2"""
@@ -94,6 +97,12 @@ def main():
 				except:
 					pass
 
+		elif sys.argv[1] == "-q" or sys.argv[1] == "--quiet":
+			try:
+				input_str = sys.stdin.read()
+				decrypt_online(input_str[:-1]);		#This [:-1] is to remove the last \n in the string
+			except:
+				pass
 		else:
 			usage()
 	else:

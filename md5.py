@@ -34,7 +34,7 @@ def usage():
 	print usage
 	sys.exit()
 
-def from_opt(hash):
+def decrypt_online(hash):
 	print"\n[*] Hash: %s"%(hash)
 	def site():
 		br.open("http://md5.my-addr.com/md5_decrypt-md5_cracker_online/md5_decoder_tool.php")
@@ -66,40 +66,6 @@ def from_opt(hash):
 
 	site()
 
-def from_file(hash):
-	def site():
-		print"\n[*] Hash: %s"%(hash)
-		br.open("http://md5.my-addr.com/md5_decrypt-md5_cracker_online/md5_decoder_tool.php")
-		br.select_form(nr=0)
-		br.form["md5"] = hash
-		source = br.submit().read()
-		if 'Hash "'+hash+'" not found in database' in source:
-			print"[-] Hash '%s' not found in database"%(hash)
-			site2()
-		elif 'String "'+hash+'" is not MD5 hash' in source:
-			print"[!] String '%s' is not MD5 hash"%(hash)
-			pass
-		elif 'Result:' in source:
-			print "[+] Hashed string: %s"%(re.findall("""<span class='middle_title'>Hashed string</span>: (.*?)</div>""", source)[0])
-			pass
-		else:
-			pass
-	def site2():
-		br.open("http://md5decryption.com/")
-		br.select_form(nr=0)
-		br.form["hash"] = hash
-		source1 = br.submit("submit").read()
-		if "Decrypted Text:" in source1:
-			print "[+] Hashed string: %s"%(re.findall('Decrypted Text: </b>(.*?))</font>', source1)[0])
-			pass
-		else:
-			print"[-] Hash '%s' not found in database"%(hash)
-			pass
-
-	site()
-
-
-
 
 def main():
 	if len(sys.argv) == 3:
@@ -110,7 +76,7 @@ def main():
 
 		if sys.argv[1] == "-h" or sys.argv[1] == "--hash":
 			try:
-				from_opt(sys.argv[2])
+				decrypt_online(sys.argv[2])
 			except:
 				pass
 
@@ -124,7 +90,7 @@ def main():
 
 			for i in md5ler:
 				try:
-					from_file(i)
+					decrypt_online(i)
 				except:
 					pass
 
